@@ -5,4 +5,4 @@ while True:
         break
     cont += 1
     s += num
-print(f"A soma dos {cont} é de {s}!")
+print(f"A soma dos {cont} números é de {s}!")
