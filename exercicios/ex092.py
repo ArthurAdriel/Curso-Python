@@ -1,6 +1,7 @@
 pessoa = {}
 pessoa['Nome'] = str(input('Nome: '))
-pessoa['Ano'] = int(input('Ano de Nascimento: '))
+ano = int(input('Ano de nascimento? '))
+pessoa['Idade'] = 2025 - ano
 pessoa['Ctps'] = int(input('Carteira de Trabalho: (0 não tem): '))
 if pessoa['Ctps'] != 0:
     pessoa['Contratacao'] = int(input('Ano de Contratação: '))

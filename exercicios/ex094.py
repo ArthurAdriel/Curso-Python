@@ -2,7 +2,6 @@ grupo = list()
 pessoa = dict()
 total = 0
 acimamedia = []
-mulheres = []
 while True:
     pessoa['Nome'] = str(input('Nome: '))
     pessoa['Sexo'] = str(input('Sexo: [F/M] ')).upper().capitalize()[0]
@@ -17,22 +16,16 @@ while True:
         break
 media = total / len(grupo)
 print('-=' * 30)
-print(f'- O grupo tem {len(grupo)} pessoas. ')
-print(f'A média de idade é de {media} anos.')
-print('As mulheres cadastradas foram: ', end='')
+print(f'A) O grupo tem {len(grupo)} pessoas. ')
+print(f'B) A média de idade é de {media:5.2f} anos.')
+print('C) As mulheres cadastradas foram: ', end='')
 for p in grupo:
-    for k, v in p.items():
-        if k == 'Sexo' and v == 'F':
-            mulheres.append(p)
-        if k == 'Idade' and v > media:
-            acimamedia.append(p)
-for n in mulheres:
-    for k, v in n.items():
-        if k == 'Nome':
-            print(v, end='. ')
+    if p['Sexo'] in 'F':
+        print(f'{p["Nome"]}',end='.')
 print()
-print(f'Lista das pessoas que estão acima da média:')
-for c in acimamedia:
-    print(c)
-    print()
+print(f'D) Lista das pessoas que estão acima da média:', end='')
+for p in grupo:
+    if p['Idade'] >= media:
+        print(f'{p["Nome"]}',end='.')
+print()
 print('<< Encerrado >>')
