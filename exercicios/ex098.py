@@ -3,6 +3,10 @@ from time import sleep
 def contador(inicio, fim, passo):
     print('-=' * 30)
     print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
+    if passo < 0:
+        passo = passo * -1
+    if passo == 0:
+        passo = 1
     if inicio < fim:
         while inicio <= fim:
             print(f'{inicio}', end=' ')
